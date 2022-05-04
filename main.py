@@ -2,13 +2,19 @@ import meraki
 import datetime
 import pandas as pd
 
-API_KEY = '7670f3d290a23ae3457b894d369707f6a2beb642'
+# Enter your API key
+
+API_KEY = ''
 
 dashboard = meraki.DashboardAPI(API_KEY)
 
+# Network ID is necessary for this API endpoint
+
+network_id = ''
+
+# This function is used to manipulate time into ISO format
 
 def updateTime():
-    network_id = 'L_645140646620844696'
 
     today = datetime.datetime.now().replace(microsecond=0)
     new_date = pd.to_datetime(today) + pd.DateOffset(days=7)
