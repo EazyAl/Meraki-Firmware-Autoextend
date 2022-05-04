@@ -1,0 +1,15 @@
+
+    "stage": {
+        "app_function": "main.app",
+        "aws_region": "eu-west-1",
+        "profile_name": "boundless-sandbox",
+        "project_name": "research-py",
+        "runtime": "python3.9",
+        "s3_bucket": "firmwareupdate-zappa",
+        "slim_handler" : "true",
+        "events": [{
+            "function": "your_module.your_function", // The function to execute
+            "expression": "rate(1 day)" // When to execute it (in cron or rate format)
+        }]
+    }
+}
